@@ -8,105 +8,16 @@
 <style>
 
 </style>
-<script>
-class Project {
-    constructor(title, link, size, languages, platforms, tags) {
-        this.title = title
-        this.link = link
-        this.size = size
-        this.languages = languages
-        this.platforms = platforms
-        this.tags = tags
-    }
-}
-
-const projects = [
-    new Project("Wallpaper Randomizer", "https://github.com/N0nken/wallpaper-randomizer-windows", "0", ["python"], ["windows"], []),
-    new Project("Gymnasiearbete - Simple Speech Recognition Model", "https://github.com/N0nken/Gymnasiearbete-Final", "1", ["python"], ["windows"], ["machine-learning"]),
-    new Project("Conways Game of Life", "https://github.com/N0nken/conways-game-of-life", "0", ["python"], ["windows"], []),
-    new Project("Group project 1 KTH - Simple 2D fighter", "https://github.com/N0nken/Projektkurs-Grupp-19", "2", ["C"], ["windows", "mac"], ["group-project", "game-dev"])
-];
-let sizes = []
-let languages = []
-let platforms = []
-let tags = []
-for (project of projects) {
-    if (!sizes.includes(project.size)) {
-        sizes.push(project.size);
-    }
-    for (language of project.languages) {
-        if (!languages.includes(language)) {
-            languages.push(language);
-        }
-    }
-    for (platform of project.platforms) {
-        if (!platforms.includes(platform)) {
-            platforms.push(platform);
-        }
-    }
-    for (tag of project.tags) {
-        if (!tags.includes(tag)) {
-            tags.push(tag);
-        }
-    }
-}
-</script>
 <body>
     <div>
         <h3>Projects</h3>
         <div>
-            <form action="index.html" method="get" id="search-form">
-                <label for="sizes">Sizes</label>
-                <ul style="list-style-type: none;" id="sizes">
-                    <script>
-                        const sizes_list = document.getElementById("sizes");
-                        new_inner_html = "";
-                        for (size of sizes) {
-                            new_inner_html += "<li><label for='" + "size_" + size + "'>" + size + "</label><input type='checkbox' id='size_" + size + "' value='" + size + "'></li>";
-                        }
-                        sizes_list.innerHTML = new_inner_html;
-                    </script>
-                </ul>
-                <label for="lanugages">Languages</label>
-                <ul style="list-style-type: none;" id="languages">
-                    <script>
-                        const languages_list = document.getElementById("languages");
-                        new_inner_html = "";
-                        for (language of languages) {
-                            new_inner_html += "<li><label for='" + "language_" + language + "'>" + language + "</label><input type='checkbox' id='language_" + language + "' value='" + language + "'></li>";
-                        }
-                        languages_list.innerHTML = new_inner_html;
-                    </script>
-                </ul>
-                <label for="platforms">Platforms</label>
-                <ul style="list-style-type: none;" id="platforms">
-                    <script>
-                        const platforms_list = document.getElementById("platforms");
-                        new_inner_html = "";
-                        for (platform of platforms) {
-                            new_inner_html += "<li><label for='" + "platform_" + platform + "'>" + platform + "</label><input type='checkbox' id='platform_" + platform + "' value='" + platform + "'></li>";
-                        }
-                        platforms_list.innerHTML = new_inner_html;
-                    </script>
-                </ul>
-                <label for="tags">Tags</label>
-                <ul style="list-style-type: none;" id="tags">
-                    <script>
-                        const tags_list = document.getElementById("tags");
-                        new_inner_html = "";
-                        for (tag of tags) {
-                            new_inner_html += "<li><label for='" + "tag_" + tag + "'>" + tag + "</label><input type='checkbox' id='tag_" + tag + "' value='" + tag + "'></li>";
-                        }
-                        tags_list.innerHTML = new_inner_html;
-                    </script>
-                </ul>
-                <input type="submit" value="Search">
-            </form>
-        </div>
+            <ul>
+                <li><a href="https://github.com/N0nken/wallpaper-randomizer-windows">Wallpaper Randomizer</a></li>
+                <li><a href="https://github.com/N0nken/Gymnasiearbete-Final">Gymnasiearbete - Simple Speech Recognition Model</a></li>
+                <li><a href="https://github.com/N0nken/conways-game-of-life">Conways Game of Life</a></li>
+                <li><a href="https://github.com/N0nken/Projektkurs-Grupp-19">Group project 1 KTH - Simple 2D fighter</a></li>
+            </ul>
     </div>
 </body>
-<script>
-
-document.getElementById("search-form").innerHTML
-</script>
 </html>
